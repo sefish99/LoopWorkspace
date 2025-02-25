@@ -277,6 +277,11 @@ jobs:
           # Several patches may be added per submodule.
           # Adding comments (#) may be useful to easily tell the individual patches apart.
 
+          # See if this improves connectivity for G7 - include all 3 commits from motinis scan-fix branch
+          curl https://github.com/motinis/G7SensorKit/commit/ba44beb3d1491c453f4f438443c3f8ba29146ab3.patch | git apply --directory=G7SensorKit -v --whitespace=fix
+          curl https://github.com/motinis/G7SensorKit/commit/d86ac8e9cd523d1267587dd70c96597125eef7ab.patch | git apply --directory=G7SensorKit -v --whitespace=fix
+          curl https://github.com/motinis/G7SensorKit/commit/205054e7537723c2aec58d807634b4853f687244.patch | git apply --directory=G7SensorKit -v --whitespace=fix
+
       # Patch Fastlane Match to not print tables
       - name: Patch Match Tables
         run: |
